@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+    - image: circleci/openjdk:8-jdk
+    steps:
+    - checkout
+    - run: xvfb-run java -jar selenium-server-standalone.jar >/dev/null 2>&1 &
+    - run: java -jar Test.jar 
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build

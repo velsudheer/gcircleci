@@ -1,16 +1,20 @@
 version: 2
-jobs:
-  build:
-    docker:
+executorType: docker
+containerInfo:
+    - image: ubuntu:14.04
+      env:
+        - DISPLAY=:99
+        - CHROME_BIN=/usr/bin/google-chrome
+
+- type: shell
+  name: Starting Xvfb (for Browser Tests)
+  command: Xvfb :99 -screen 0 1280x1024x24
+   background: true
+   
     - image: circleci/openjdk:8-jdk
     - image: selenium/standalone-chrome:3.1.0
    
     steps:
-    type: shell
-command: |
-  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
-  
     - checkout
     - run: sudo apt update
     - run: xvfb-run java -Dwebdriver.chrome.driver=../chromedriver -jar ../seleniumserverstandalone.jar >/dev/null 2>&1 &

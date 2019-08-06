@@ -3,12 +3,7 @@ jobs:
   build:
     docker:
     - image: circleci/openjdk:8-jdk
-    - type: shell
-            name: Start Xvfb
-            command: |
-              wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar -O selenium-server.jar
-              Xvfb :7055
-            background: true
+    - image: selenium/standalone-chrome:3.1.0
     steps:
     - checkout
     - run: sudo apt update

@@ -5,7 +5,8 @@ jobs:
     - image: selenium/standalone-chrome:3.0
     steps:
     - checkout
-    - run: java -jar Test.jar 
+    - run: javac src/Test.java
+    - run: java Test
 workflows:
   version: 2
   workflow:

@@ -1,6 +1,7 @@
 version: 2
-executorType: docker
-containerInfo:
+jobs:
+  build:
+ docker:
     - image: ubuntu:14.04
     - image: circleci/openjdk:8-jdk
     - image: selenium/standalone-chrome:3.1.0

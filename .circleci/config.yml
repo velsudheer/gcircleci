@@ -7,7 +7,7 @@ jobs:
     - checkout
     - run: sudo apt update
     - run: google-chrome --version
-    - run: xvfb-run java -Dwebdriver.chrome.driver=../chromedriver -jar ../seleniumserverstandalone.jar >/dev/null 2>&1 &
+    - run: xvfb-run java -Dwebdriver.chrome.driver=../chromedriver -jar ../selenium-server-standalone.jar >/dev/null 2>&1 &
     - run: java -jar Test.jar
 workflows:
   version: 2

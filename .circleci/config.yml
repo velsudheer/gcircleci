@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-    - image: circleci/openjdk:8-jdk
+    - image: circleci/openjdk:8-jdk-browsers
     - image: selenium/standalone-chrome:3.1.0
    
     steps:

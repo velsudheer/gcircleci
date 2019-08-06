@@ -6,7 +6,6 @@ jobs:
     steps:
     - checkout
     - run: sudo apt update
-    - run: composer install -n --prefer-dist
     - run: google-chrome --version
     - run: xvfb-run java -Dwebdriver.chrome.driver=../chromedriver -jar ../seleniumserverstandalone.jar >/dev/null 2>&1 &
     - run: javac src/Test.java

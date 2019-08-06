@@ -1,16 +1,16 @@
 version: 2
 jobs:
   build:
-   type: shell
-command: |
-  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
-  
     docker:
     - image: circleci/openjdk:8-jdk
     - image: selenium/standalone-chrome:3.1.0
    
     steps:
+    type: shell
+command: |
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
+  
     - checkout
     - run: sudo apt update
     - run: xvfb-run java -Dwebdriver.chrome.driver=../chromedriver -jar ../seleniumserverstandalone.jar >/dev/null 2>&1 &

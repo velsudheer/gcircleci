@@ -12,6 +12,7 @@ jobs:
     - run: java -version
     - run: jar cvfm Test.jar src/manifest.txt src/*.class
     - run: jar cvfe Test.jar Test src/*.java
+    - run: java -cp . Test
     - run: java -jar Test.jar
 workflows:
   version: 2

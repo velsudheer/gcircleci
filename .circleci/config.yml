@@ -10,6 +10,7 @@ jobs:
     - run: xvfb-run java -Dwebdriver.chrome.driver=../chromedriver -jar ../selenium-server-standalone.jar >/dev/null 2>&1 &
     - run: chromedriver --version
     - run: java -version
+    - run: java src/Test.class
     - run: jar cvfm Test.jar src/manifest.txt src/*.java
     - run: jar cvfe Test.jar Test src/*.java
     - run: java -jar Test.jar

@@ -8,6 +8,7 @@ jobs:
     steps:
     - checkout
     - run: sudo apt update
+    - run: google-chrome --version
     - run: xvfb-run java -Dwebdriver.chrome.driver=../chromedriver -jar ../seleniumserverstandalone.jar >/dev/null 2>&1 &
     - run: javac src/Test.java
     - run: java src/Test

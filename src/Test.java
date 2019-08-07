@@ -10,7 +10,9 @@ public class Test {
 		
 		System.setProperty("webdriver.chrome.driver","../chromedriver");
 		//WebDriver driver = new RemoteWebDriver("http://127.0.0.1:9515", DesiredCapabilities.chrome());
-		  driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions(); 
+		options.addArguments("--headless");  
+		driver = new ChromeDriver(options);
 		
 		  driver.manage().window().maximize();
 		driver.get("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin");

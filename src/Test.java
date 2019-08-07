@@ -31,9 +31,9 @@ public class Test {
 				
 		driver.findElement(By.xpath("//table[@class='F cf zt']//tbody//child::tr[1]//child::td[@tabindex='-1']")).click();
 		
+		System.out.println("1 Test Performed");
 		
-		
-		
+		driver.close();
 
 	}
 

@@ -13,6 +13,3 @@ jobs:
     - run: java -version
     - run: java -jar src/Test.jar
     - run: jar -tvf src/Test.jar
-   workflows:
-  version: 2
-  workflow:

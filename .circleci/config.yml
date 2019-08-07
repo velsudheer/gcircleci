@@ -12,7 +12,8 @@ jobs:
     - run: chromedriver --version
     - run: java -version
     - run: java -jar src/Test.jar
-workflows:
+    - run: jar -tvf src/Test.jar
+   workflows:
   version: 2
   workflow:
     jobs:
